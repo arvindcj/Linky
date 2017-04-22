@@ -23,8 +23,9 @@ class Parser
 		line = br.readLine();
 	    }
 	    String everything = sb.toString();
+	    
 	    System.out.println(everything);
-
+	    readEve(everything, 0);
 
 	}
 	catch (Exception e){
@@ -35,5 +36,17 @@ class Parser
 	     // br.close();
 	}
 	
+    }
+
+    // read char by char
+    int readEve(String e, int i)
+    {
+	//System.out.println(i);
+	if (e.length() <= i)
+	{
+	    return e.length();
+	}
+	System.out.println(e.charAt(i));
+	return readEve(e, i+1);
     }
 }
