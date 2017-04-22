@@ -13,13 +13,17 @@ public class App {
 }
 */
 
- import java.awt.*;
- import java.awt.event.*;
- import javax.swing.*;
+/* Browser configuration Setup.
 
- public class Linky
-     extends JFrame
-     implements ActionListener {
+ */
+
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import java.net.URL;
+
+public class Linky
+{
 
      private static int _WindowWidth = 800;
      private static int _WindowHeight = 600;
@@ -27,40 +31,28 @@ public class App {
      private static int _WindowXPosition = 100;
      private static int _WindowYPosition = 100;
 
-     private BorderLayout layout;
-
-     public Linky(String appTitle,
-                int windowXPosition,
-                int windowYPosition,
-                int windowWidth,
-                int windowHeight)
-     {
-         super(appTitle);
-         layout = new BorderLayout( windowXPosition,
-                                    windowYPosition);
-         Container c = getContentPane();
-         c.setLayout( layout );
-         setSize( windowWidth, windowHeight );
-         show();
-     }
-
-     public void actionPerformed( ActionEvent e )
-     {
-     }
-
      public static void main( String args[] )
      {
-         Linky linkyApp = new Linky( _AppTitle,
-				     _WindowXPosition,
-				     _WindowYPosition,
-				     _WindowWidth,
-				     _WindowHeight);
+         Coordinator browser = new Coordinator( _AppTitle,
+						_WindowXPosition,
+						_WindowYPosition,
+						_WindowWidth,
+						_WindowHeight);
 	 
-         linkyApp.addWindowListener(new WindowAdapter() {
+         browser.addWindowListener(new WindowAdapter() {
                  public void windowClosing( WindowEvent e )
                  {
                      System.exit( 0 );
                  }
              });
+	 /*
+	 URL url = new URL("http://stackoverflow.com");
+
+	 try (BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream(), "UTF-8"))) {
+    for (String line; (line = reader.readLine()) != null;) {
+        System.out.println(line);
+    }
+} 
+	 */
      }
  }
