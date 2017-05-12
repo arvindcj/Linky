@@ -48,7 +48,7 @@ public class Linky
 						_WindowYPosition,
 						_WindowWidth,
 						_WindowHeight);
-	 
+	 /* 
          browser.addWindowListener(new WindowAdapter() {
                  public void windowClosing( WindowEvent e )
                  {
