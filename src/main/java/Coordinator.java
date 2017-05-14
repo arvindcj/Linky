@@ -30,8 +30,9 @@ class Coordinator
                 int windowWidth,
                 int windowHeight)
     {
-	BrowserUI bui = new BrowserUI("hello", 800, 600);
-	bui.drawBrowserWindow(10, 10);
+
+	//BrowserUI bui = new BrowserUI("hello", 800, 600);
+	//bui.drawBrowserWindow(10, 10);
 	//super(appTitle);
 		
 	//Linky.logger.info("Parsed File" + file);
@@ -42,12 +43,14 @@ class Coordinator
 	c.setLayout( layout );
 	setSize( windowWidth, windowHeight );
 	//show();
+	*/
 	//p = new Parser(file);
-	/*
+	file = "http://127.0.0.1:8080/testdata01.html";
 	SoupParser jsoup = new SoupParser(file);
 	jsoup.run();
-	Renderer renderer = new Renderer(jsoup);
-	renderer.buildRendererTree();
+	jsoup.elementsHTML();
+	//Renderer renderer = new Renderer(jsoup);
+	//renderer.buildRendererTree();
 	
 	/*	Table<Integer, Character, Integer> edges = HashBasedTable.create();
 	edges.put(1,'a', 1);

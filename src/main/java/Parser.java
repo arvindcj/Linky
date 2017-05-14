@@ -124,22 +124,18 @@ class Parser
 {
     File file;
     Tokenizer tkn;
+    FetchHTTP f;
+    String everything;
     
     Parser(String file_path)
     {
 	file = new File(file_path);
 	
+	f = new FetchHTTP();
+
 	try {
-	    BufferedReader br = new BufferedReader(new FileReader(file_path));
-	    StringBuilder sb = new StringBuilder();
-	    String line = br.readLine();
-	    
-	    while (line != null) {
-		sb.append(line);
-		sb.append(System.lineSeparator());
-		line = br.readLine();
-	    }
-	    String everything = sb.toString();
+	    everything = f.fetchHTML("http://127.0.0.1:8080/testdata01.html");
+		
 
 	    Linky.logger.info("String to be Parsed \n" + everything + "\n\n");
 	    tkn = new Tokenizer(everything);

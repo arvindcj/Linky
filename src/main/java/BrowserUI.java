@@ -14,7 +14,7 @@ import javax.swing.JTextField;
 import javax.swing.event.HyperlinkEvent;
 import javax.swing.event.HyperlinkListener;
 
-class BrowserUI extends JFrame implements ActionListener {
+class BrowserUI extends JFrame  {
     int width;
     int height;
     String appTitle;
@@ -35,7 +35,9 @@ class BrowserUI extends JFrame implements ActionListener {
 	getContentPane().add(pnlURL, BorderLayout.NORTH);
 	getContentPane().add(wv, BorderLayout.CENTER);
 	ActionListener al = new ActionListener() {       
-          public void actionPerformed(ActionEvent ae) {         
+          public void actionPerformed(ActionEvent ae) {
+	      	Linky.logger.info("action listener 01");
+
                try {           
                     String url = ae.getActionCommand().toLowerCase();           
                     if (url.startsWith("http://"))             
@@ -53,6 +55,4 @@ class BrowserUI extends JFrame implements ActionListener {
      setVisible(true);
     }
 
-    public void actionPerformed(ActionEvent e) {}
-    
 }
