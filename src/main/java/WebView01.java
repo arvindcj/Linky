@@ -4,7 +4,7 @@ import javax.swing.*;
 
 class WebView01 extends JPanel implements MouseListener {
     Image img;      // Contains the image to draw on MyCanvas
-
+    int i;
     public WebView01()
     {
         // Initialize img here.
@@ -14,8 +14,9 @@ class WebView01 extends JPanel implements MouseListener {
     public void paintComponent(Graphics g)
     {
         // Draws the image to the canvas
-	g.drawString("sdf", 10, 10);
-        g.drawImage(img, 0, 0, null);
+	g.drawString("sdf : " + i, 10, 10);
+        //g.drawImage(img, 0, 0, null);
+	i++;
     }
 
     public void mouseClicked(MouseEvent e)

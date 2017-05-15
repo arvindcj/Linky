@@ -38,10 +38,14 @@ class BrowserUI extends JFrame  {
           public void actionPerformed(ActionEvent ae) {
 	      	Linky.logger.info("action listener 01");
 
-               try {           
-                    String url = ae.getActionCommand().toLowerCase();           
-                    if (url.startsWith("http://"))             
-                         url = url.substring(7);           
+               try {
+		   String url = ae.getActionCommand().toLowerCase();           
+		   //  SoupParser jsoup = new SoupParser(file);
+		   Coordinator.lo();
+		   wv.revalidate();
+		   wv.repaint();
+		   // if (url.startsWith("http://"))             
+		   //     url = url.substring(7);           
 		    // ep.setPage("http://" + IDN.toASCII(url));         
                } catch (Exception e) {           
                     e.printStackTrace();

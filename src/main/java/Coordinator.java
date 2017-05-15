@@ -31,21 +31,13 @@ class Coordinator
                 int windowHeight)
     {
 
-	//BrowserUI bui = new BrowserUI("hello", 800, 600);
-	//bui.drawBrowserWindow(10, 10);
+	BrowserUI bui = new BrowserUI("hello", 800, 600);
+	bui.drawBrowserWindow(10, 10);
 	//super(appTitle);
 		
-	//Linky.logger.info("Parsed File" + file);
-	/*
-	layout = new BorderLayout( windowXPosition,
-				   windowYPosition);
-	Container c = getContentPane();
-	c.setLayout( layout );
-	setSize( windowWidth, windowHeight );
-	//show();
-	*/
+
 	//p = new Parser(file);
-	file = "http://127.0.0.1:8080/testdata01.html";
+	//file = "http://127.0.0.1:8080/testdata01.html";
 	SoupParser jsoup = new SoupParser(file);
 	jsoup.run();
 	jsoup.elementsHTML();
@@ -72,5 +64,9 @@ class Coordinator
     public void actionPerformed( ActionEvent e )
     {
 	System.out.println(e);
-    }    
+    }
+
+    public static void lo(){
+	Linky.logger.info("MVC design pattern");
+    }
 }
