@@ -11,48 +11,41 @@ import org.jsoup.nodes.*;
 
 import java.io.IOException;
 
-class SoupParser {
+class SoupParser
+    extends Model {
 
-    String file_name;
-    FetchHTTP fetchH;
-    String rawHTML;
-    Document doc;
+    String url;
+    FetchHTTP fetchData;
+    String responseHTML;
+    Document document;
+
+    public void jk() {
+	Linky.logger.info("sdfsdfsddsfs");
+    }
     
-    SoupParser(String file_name) {
-    Linky.logger.info(file_name);
-	this.file_name = file_name;
+    public void parseHTML(String url) {
 	try {
-	    FetchHTTP fetchH = new FetchHTTP();
-	    rawHTML = fetchH.fetchHTML(this.file_name);
-	    //Linky.logger.info(rawHTML);
-	} catch (Exception e) {
-	}
-     }
-
-    public void run() {
-	//	Linky.logger.info(rawHTML);
-	  doc = Jsoup.parse(rawHTML);
-	  Linky.logger.info(doc.title());
-    }
-
-    public void elementsHTML() {
-	doc.traverse(new NodeVisitor() {
-        public void head(Node node, int depth) {
-	    
-	    // System.out.println(node.toString() );
-	    if(node.nodeName() == "#text") {
-		System.out.println(node.toString());
-		System.out.println("Depth : " + depth);
-	    }
-        }
-
-        public void tail(Node node, int depth) {
-	    //   System.out.println(node.nodeName());
-        }
-	});
-    }
+	    Linky.logger.info("*** Input URL ***");
+	    Linky.logger.info(url);
+	    fetchData = new FetchHTTP();
+	    responseHTML = fetchData.fetchHTML(url);
+	    Linky.logger.info(responseHTML);
+	} catch (Exception e) {}
+	document = Jsoup.parse(responseHTML);
 	
-
-
-    
+	document.traverse(new NodeVisitor() {
+		public void head(Node node, int depth) {
+	    
+		    System.out.println(node.nodeName().toString() );
+		    //if(node.nodeName() == "#text") {
+		    //	System.out.println(node.toString());
+		    //	System.out.println("Depth : " + depth);
+		    //}
+		}
+		
+		public void tail(Node node, int depth) {
+		    System.out.println(node.nodeName().toString());
+		}
+	    });
+    }
 }

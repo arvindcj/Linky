@@ -2,10 +2,13 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-class WebView01 extends JPanel implements MouseListener {
+class LinkyWebView
+    extends JPanel
+    implements MouseListener {
+
     Image img;      // Contains the image to draw on MyCanvas
     int i;
-    public WebView01()
+    public LinkyWebView()
     {
         // Initialize img here.
         this.addMouseListener(this);

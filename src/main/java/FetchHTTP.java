@@ -4,22 +4,23 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class FetchHTTP {
+
     StringBuilder htmlResponse;
     URL url;
-    HttpURLConnection conn;
+    HttpURLConnection connect;
     BufferedReader rd;
     String line;
     
-   public String fetchHTML(String urlToRead) throws Exception {
+   public String fetchHTML(String urlString) throws Exception {
+      
       htmlResponse = new StringBuilder();
 
-      url = new URL(urlToRead);
-      conn = (HttpURLConnection) url.openConnection();
-
-      conn.setRequestMethod("GET");
+      url = new URL(urlString);
+      connect = (HttpURLConnection) url.openConnection();
+      connect.setRequestMethod("GET");
 
       try {
-	  rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+	  rd = new BufferedReader(new InputStreamReader(connect.getInputStream()));
       } catch (Exception e) {
 	  Linky.logger.info(e.getMessage());
       }

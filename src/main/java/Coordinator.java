@@ -15,14 +15,9 @@ import com.google.common.collect.Table;
  */
 
 
-class Coordinator
-/* extends JFrame
-    implements ActionListener
-*/
-{
-    private BorderLayout layout;
-    private Parser p;
-    private String file = "src/test/data/testcases/testdata01.html";
+class Coordinator {
+    
+    private SoupParser soupParser;
     
     Coordinator(String appTitle,
                 int windowXPosition,
@@ -30,43 +25,23 @@ class Coordinator
                 int windowWidth,
                 int windowHeight)
     {
-
-	BrowserUI bui = new BrowserUI("hello", 800, 600);
-	bui.drawBrowserWindow(10, 10);
-	//super(appTitle);
-		
-
-	//p = new Parser(file);
-	//file = "http://127.0.0.1:8080/testdata01.html";
-	SoupParser jsoup = new SoupParser(file);
-	jsoup.run();
-	jsoup.elementsHTML();
-	//Renderer renderer = new Renderer(jsoup);
-	//renderer.buildRendererTree();
 	
-	/*	Table<Integer, Character, Integer> edges = HashBasedTable.create();
-	edges.put(1,'a', 1);
-	       	edges.put(2, 'a', 2);
-		edges.put(2, '1', 3);
-	edges.put(3, '1', 3);
+	BrowserUI browserView = new BrowserUI(appTitle,
+				      windowWidth,
+				      windowHeight,
+				      windowXPosition,
+				      windowYPosition);
 	
-	int [] accepting_states = {1};
-	String input_string = "";
-	int current_node = 1;
+	soupParser = new SoupParser();
+    
+	soupParser.addObserver(browserView);
+
+	Controller myController = new Controller();
+	myController.addModel(soupParser);
+	myController.addView(browserView);
+	//myController.initModel(start_value);
+	browserView.addController(myController);
 	
-	FSM.fsm_run(input_string,
-		    current_node,
-		    edges,
-		    accepting_states);
-	*/
-    }
 
-    public void actionPerformed( ActionEvent e )
-    {
-	System.out.println(e);
-    }
-
-    public static void lo(){
-	Linky.logger.info("MVC design pattern");
     }
 }
