@@ -1,0 +1,8 @@
+:compileJava
+:processResources UP-TO-DATE
+:classes
+:run
+#documenthtmlheadbody
+BUILD SUCCESSFUL
+
+Total time: 1.037 secs

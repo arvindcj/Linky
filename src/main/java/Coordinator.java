@@ -25,15 +25,17 @@ class Coordinator {
                 int windowWidth,
                 int windowHeight)
     {
-	
+	/*
 	BrowserUI browserView = new BrowserUI(appTitle,
 				      windowWidth,
 				      windowHeight,
 				      windowXPosition,
 				      windowYPosition);
 	
+	*/
 	soupParser = new SoupParser();
-    
+	soupParser.parseHTML("sdf");
+	/*
 	soupParser.addObserver(browserView);
 
 	Controller myController = new Controller();
@@ -41,7 +43,7 @@ class Coordinator {
 	myController.addView(browserView);
 	//myController.initModel(start_value);
 	browserView.addController(myController);
-	
+	*/
 
     }
 }

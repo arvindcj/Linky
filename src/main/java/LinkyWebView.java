@@ -1,6 +1,15 @@
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import java.awt.Rectangle;
+import java.util.*;
+import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.awt.FontMetrics;
+import javax.swing.JTextArea;
+
+
 
 class LinkyWebView
     extends JPanel
@@ -8,28 +17,73 @@ class LinkyWebView
 
     Image img;      // Contains the image to draw on MyCanvas
     int i;
+    private Graphics2D drawImage;
+    private Renderer render;
+    RenderObject node;
+    Font font;
+    FontMetrics metrics;
+    
     public LinkyWebView()
     {
         // Initialize img here.
         this.addMouseListener(this);
+	font = new Font("Arial",Font.ITALIC,50);
+	//fontMetrics = new FontMetrics(font);
     }
 
-    public void paintComponent(Graphics g)
+
+    @Override
+    public void paintComponent(Graphics graphics01)
     {
-        // Draws the image to the canvas
-	g.drawString("sdf : " + i, 10, 10);
-        //g.drawImage(img, 0, 0, null);
-	i++;
+	int x = 10;
+	int y = 10;
+
+	Linky.logger.info("inside paint component");
+	super.paintComponent(graphics01);
+	Graphics2D graphics = (Graphics2D)graphics01;
+
+	int paddingX = 5;
+	int paddingY = 5;
+	int height = 10;
+	int width = 0;
+	/*	
+	FontMetrics metrics = graphics.getFontMetrics(font);
+	Map<Integer, RenderObject> e = Renderer.getInstance().getData();
+	x = 10;
+	y=10;
+		for(Map.Entry<Integer, RenderObject> entry: e.entrySet()) {
+		    System.out.println("x : y : " + x + " " + y);
+
+	       int key = entry.getKey();  
+	    RenderObject b = entry.getValue();
+	    
+	    if( b.nodeName.matches("#text") && b.stnode.length() > 1) {
+		if(b.parent.matches("title")) {
+	
+		} else 
+		if(b.parent.matches("div")) {
+
+		    graphics.drawString(b.stnode, x, y);
+		    System.out.println("x : y : " + x + " " + y);
+	
+		    y = y + paddingY + height;
+		} else
+		    if( !(b.parent.matches("div")) && !(b.parent.matches("title"))) {
+		  graphics.drawString(b.stnode, x, y);
+		  width = metrics.stringWidth(b.stnode);
+		    x = x + paddingX +width ;
+		    System.out.println("x : y : " + x + " " + y);
+		}
+	    }
+	}
+		x = 10;
+		y = 10;
+		e.clear();
+	*/
     }
 
     public void mouseClicked(MouseEvent e)
     {
-        int x = e.getX();
-        int y = e.getY();
-
-        Graphics g = img.getGraphics();
-        g.fillOval(x, y, 3, 3);
-        g.dispose();
     }
 
     public void mouseExited(MouseEvent e) {
@@ -40,4 +94,8 @@ class LinkyWebView
 public 	void mouseReleased(MouseEvent e) {}
  
 public	void mouseEntered(MouseEvent e) {}
+
+     public void actionPerformed(ActionEvent arg0) {
+     
+    }
 }

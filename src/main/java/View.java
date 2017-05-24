@@ -15,11 +15,4 @@ public abstract class View
 	super(appTitle);
 	setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
-
-    public void update(Observable obs, Object obj) {
-    }
-
-    //    public void addController(Controller controller) {
-	
-    //}
 }

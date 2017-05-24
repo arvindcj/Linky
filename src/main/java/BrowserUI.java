@@ -13,6 +13,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.event.HyperlinkEvent;
 import javax.swing.event.HyperlinkListener;
+import java.util.Observable;
 
 public class BrowserUI
     extends View {
@@ -21,7 +22,7 @@ public class BrowserUI
     private LinkyWebView webView;
     private JPanel urlPanel;
     private String url;
-    
+       
     BrowserUI(String appTitle,
 	      int width,
 	      int height,
@@ -41,14 +42,11 @@ public class BrowserUI
 	setVisible(true);
     }
 
-    /*
-    public void actionPerformed(ActionEvent event) {
-	url = event.getActionCommand().toLowerCase();
-	Linky.logger.info(url);
-    }
-    */
-    
     public void addController(ActionListener controller) {
 	urlField.addActionListener(controller);
+    }
+
+    public void update(Observable obs, Object obj) {
+	webView.repaint();
     }
 }
