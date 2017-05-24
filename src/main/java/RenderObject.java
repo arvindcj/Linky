@@ -25,7 +25,7 @@ class RenderObject {
            
     public RenderObject createObject(Node node, RenderStyle style) {
 	RenderObject o = null;
-	
+
 	switch (style.display()) {
         case NONE:
 	    o = new RenderNone(node);

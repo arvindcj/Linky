@@ -1,0 +1,16 @@
+# HTML5 Tags 
+- 120 Tags
+- https://www.w3schools.com/tags/tag_applet.asp
+
+# Depricated HTML Tags
+- https://www.codehelp.co.uk/html/deprecated.html
+- 10 tags
+
+# HTML5 Tags by category
+- https://www.w3schools.com/tags/ref_byfunc.asp
+
+- Basic HTML
+- 
+
+
+All tags are parsed but only select is rendered.

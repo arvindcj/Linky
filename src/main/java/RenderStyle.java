@@ -20,36 +20,23 @@ class RenderStyle {
     RS r;
     
     Font font = new Font ("Arial", Font.PLAIN , 11);
-    
-    List none = new ArrayList();
-    List inline = new ArrayList();
-    List block = new ArrayList();
 
     Map<String, ArrayList<Object>> map = new HashMap<String, ArrayList<Object>>();
 
     RenderStyle(Node node) {
-	map.put("#document",new ArrayList(r.NONE));
-	none.add("#document");
-	none.add("html");
-	none.add("head");
-	none.add("body");
-	inline.add("#text");
-	block.add("div");
+	map.put("#document",new ArrayList<Object>(Arrays.asList(r.NONE)));
+	map.put("html",new ArrayList<Object>(Arrays.asList(r.NONE)));
+	map.put("head",new ArrayList<Object>(Arrays.asList(r.NONE)));
+	map.put("body",new ArrayList<Object>(Arrays.asList(r.NONE)));
+	map.put("#text",new ArrayList<Object>(Arrays.asList(r.INLINE, font)));
+	map.put("div",new ArrayList<Object>(Arrays.asList(r.BLOCK)));
 	this.node = node;
     }
 
-    public RS display(){
-	if(none.contains(node.nodeName())) {
-	    System.out.println("NONE");
-	    return r.NONE;
-	} else
-	if(inline.contains(node.nodeName())) {
-	    System.out.println("INLINE");
-	    return r.INLINE;
-	} else
-	if(block.contains(node.nodeName())) {
-	    System.out.println("BLOCK");
-	    return r.BLOCK;
+    public RS display() {
+
+	if(map.containsKey(node.nodeName())) {
+	    return (RS) map.get(node.nodeName()).get(0);
 	} else {
 	    return null;
 	}
