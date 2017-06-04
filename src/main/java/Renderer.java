@@ -9,17 +9,20 @@ import java.util.Map.Entry;
 import java.util.*;
 import com.google.common.base.MoreObjects;
 
-
+/* Renderer Singleton design pattern
+   1. Render Tree built from RenderObject. 
+   2. Associate Render Style with Render Object.
+ */
 public class Renderer
 {
  
-    private Map<Integer, RenderObject> map=new HashMap<Integer, RenderObject>();
+    private Map<Integer, RenderObject> map;
+    map=new HashMap<Integer, RenderObject>();
     private static Renderer instance = null;
     int i =0;
     //RenderNode rn;
 
     protected Renderer() {
-	//render = HashBasedTable.create();
     }
 
     public static Renderer getInstance() {

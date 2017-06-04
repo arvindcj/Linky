@@ -10,12 +10,17 @@ import java.util.*;
 import java.awt.FontMetrics;
 import java.awt.Font;
 
-     enum RS {
-	NONE,
-	INLINE,
-	BLOCK,
-	LIST_ITEM
-    }
+/* RenderObject for individual HTML TAG 
+   1. Factory method design pattern
+   2. create RenderObject for individual Tags.
+   3. Associate Style information with Tag.
+ */
+enum RS {
+    NONE,
+    INLINE,
+    BLOCK,
+    LIST_ITEM
+}
 
 class RenderObject {
 
@@ -54,8 +59,6 @@ class RenderObject {
     public RenderStyle getStyle() {
 	return this.style;
     }
-
-    //RenderObject(Node node, RenderStyle style){}
 
     public RenderObject createObject(Node node, RenderStyle style) {
 	RenderObject o = null;

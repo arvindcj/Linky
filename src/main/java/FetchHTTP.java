@@ -3,6 +3,12 @@ import java.net.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/* HTTP Fetcher HTML
+   1. Setup URL
+   2. get HTML from remote server.
+   3. build HTML response string.
+   4. return HTMl response.
+ */
 public class FetchHTTP {
 
     StringBuilder htmlResponse;
@@ -11,7 +17,8 @@ public class FetchHTTP {
     BufferedReader rd;
     String line;
     
-   public String fetchHTML(String urlString) throws Exception {
+   public String fetchHTML(String urlString)
+       throws Exception {
       
       htmlResponse = new StringBuilder();
 

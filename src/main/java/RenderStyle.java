@@ -6,6 +6,10 @@ import org.jsoup.nodes.*;
 import java.util.*;
 import java.awt.Font;
 
+/* RenderStyle of HTML Nodes
+   1. used to style HTML TAGS.
+   2. build RenderStyle map. 
+*/
 class RenderStyle {
 
     private Node node;
@@ -52,7 +56,6 @@ class RenderStyle {
     }
 
     public Font getStyles(String key) {
-	//System.out.println("hello style : " +  map.get(key).subList(1,1));
 	return (Font) map.get(key).get(1);
     }
 }

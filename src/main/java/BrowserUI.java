@@ -15,6 +15,14 @@ import javax.swing.event.HyperlinkEvent;
 import javax.swing.event.HyperlinkListener;
 import java.util.Observable;
 
+/* Create Linky Browser GUI
+   1. compose the GUI from TextField and WebView.
+   2. set application Title.
+   3. position the GUI.
+   4. set GUI dimensions.
+   5. add action listner.
+   6. Update GUI when model is altered.
+ */
 public class BrowserUI
     extends View {
  
@@ -37,7 +45,6 @@ public class BrowserUI
 	urlPanel.add(urlField, BorderLayout.CENTER);
 	getContentPane().add(urlPanel, BorderLayout.NORTH);
 	getContentPane().add(webView, BorderLayout.CENTER);
-	//urlField.addActionListener(this);
 	setSize(width, height);     
 	setVisible(true);
     }

@@ -10,7 +10,13 @@ import java.awt.FontMetrics;
 import javax.swing.JTextArea;
 
 
-
+/* Browser View
+   1. Mouse event listners.
+   2. paint on browser.
+   3. read Renderer.
+   4. iterate through Render Tree.
+   5. read RenderObject and RenderStyle.
+ */
 class LinkyWebView
     extends JPanel
     implements MouseListener {
@@ -40,66 +46,35 @@ class LinkyWebView
 	Map<Integer, RenderObject> e = Renderer.getInstance().getData();
 
 	for(Map.Entry<Integer, RenderObject> entry : e.entrySet()) {
-	    System.out.println("##################");
-	    System.out.println("Render node : " +   entry.getValue().getNode());
-	    System.out.println("******************");
 	    int key = entry.getKey();  
 	    RenderObject b = entry.getValue();
 	    b.paintObj(graphics01);
 	}
 	
 	e.clear();
-
-	/*	
-	FontMetrics metrics = graphics.getFontMetrics(font);
-	Map<Integer, RenderObject> e = Renderer.getInstance().getData();
-	x = 10;
-	y=10;
-		for(Map.Entry<Integer, RenderObject> entry: e.entrySet()) {
-		    System.out.println("x : y : " + x + " " + y);
-
-	       int key = entry.getKey();  
-	    RenderObject b = entry.getValue();
-	    
-	    if( b.nodeName.matches("#text") && b.stnode.length() > 1) {
-		if(b.parent.matches("title")) {
-	
-		} else 
-		if(b.parent.matches("div")) {
-
-		    graphics.drawString(b.stnode, x, y);
-		    System.out.println("x : y : " + x + " " + y);
-	
-		    y = y + paddingY + height;
-		} else
-		    if( !(b.parent.matches("div")) && !(b.parent.matches("title"))) {
-		  graphics.drawString(b.stnode, x, y);
-		  width = metrics.stringWidth(b.stnode);
-		    x = x + paddingX +width ;
-		    System.out.println("x : y : " + x + " " + y);
-		}
-	    }
-	}
-		x = 10;
-		y = 10;
-		e.clear();
-	*/
     }
 
     public void mouseClicked(MouseEvent e)
     {
     }
 
-    public void mouseExited(MouseEvent e) {
+    public void mouseExited(MouseEvent e)
+    {
     }
 
-    public void mousePressed(MouseEvent e){}
+    public void mousePressed(MouseEvent e)
+    {
+    }
 
-public 	void mouseReleased(MouseEvent e) {}
+    public void mouseReleased(MouseEvent e)
+    {
+    }
  
-public	void mouseEntered(MouseEvent e) {}
+    public void mouseEntered(MouseEvent e)
+    {
+    }
 
-     public void actionPerformed(ActionEvent arg0) {
-     
+    public void actionPerformed(ActionEvent arg0)
+    { 
     }
 }

@@ -1,6 +1,11 @@
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/* Entry point for Linky
+   1. setup application window size.
+   2. setup application position.
+   3. Setup logging.
+ */
 public class Linky
 {
 
