@@ -19,7 +19,7 @@ class RenderStyle {
 
     RS r;
     
-    Font font = new Font ("Arial", Font.PLAIN , 11);
+    Font font = new Font("Arial", Font.PLAIN , 11);
 
     Map<String, ArrayList<Object>> map = new HashMap<String, ArrayList<Object>>();
 
@@ -40,5 +40,19 @@ class RenderStyle {
 	} else {
 	    return null;
 	}
+    }
+
+    public ArrayList<Object> getKey(String key) {
+	return map.get(key);
+    }
+
+    public boolean containsNode(String key){
+	System.out.println( map.containsKey(key));
+	return map.containsKey(key) ? true : false;
+    }
+
+    public Font getStyles(String key) {
+	//System.out.println("hello style : " +  map.get(key).subList(1,1));
+	return (Font) map.get(key).get(1);
     }
 }

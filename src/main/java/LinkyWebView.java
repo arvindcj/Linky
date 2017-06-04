@@ -31,21 +31,25 @@ class LinkyWebView
 	//fontMetrics = new FontMetrics(font);
     }
 
-
-    @Override
     public void paintComponent(Graphics graphics01)
     {
-	int x = 10;
-	int y = 10;
-
 	Linky.logger.info("inside paint component");
 	super.paintComponent(graphics01);
 	Graphics2D graphics = (Graphics2D)graphics01;
 
-	int paddingX = 5;
-	int paddingY = 5;
-	int height = 10;
-	int width = 0;
+	Map<Integer, RenderObject> e = Renderer.getInstance().getData();
+
+	for(Map.Entry<Integer, RenderObject> entry : e.entrySet()) {
+	    System.out.println("##################");
+	    System.out.println("Render node : " +   entry.getValue().getNode());
+	    System.out.println("******************");
+	    int key = entry.getKey();  
+	    RenderObject b = entry.getValue();
+	    b.paintObj(graphics01);
+	}
+	
+	e.clear();
+
 	/*	
 	FontMetrics metrics = graphics.getFontMetrics(font);
 	Map<Integer, RenderObject> e = Renderer.getInstance().getData();

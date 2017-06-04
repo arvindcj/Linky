@@ -47,6 +47,7 @@ public class BrowserUI
     }
 
     public void update(Observable obs, Object obj) {
+	System.out.println("update data");
 	webView.repaint();
     }
 }

@@ -1,0 +1,158 @@
+% Created 2017-05-27 Sat 21:50
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fixltx2e}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{marvosym}
+\usepackage{wasysym}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\tolerance=1000
+\author{Arvind Janakiram Cuthambakam - 217007335 \\ Author 1 \\ etc}
+\date{\today}
+\title{SIT782 Assignemnt 3 (System Implementation)}
+\hypersetup{
+  pdfkeywords={},
+  pdfsubject={},
+  pdfcreator={Emacs 25.1.1 (Org mode 8.2.10)}}
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+
+\section{Description of System Developed}
+\label{sec-1}
+
+\subsection{What is the system Developed?}
+\label{sec-1-1}
+The system being developed is a Text-based web browser.
+
+\subsection{Functionalities and the features of your system?}
+\label{sec-1-2}
+\begin{itemize}
+\item Text-based web browser.
+\item HTTP Client.
+\item HTML Parser.
+\item HTML Renderer.
+\item Mouse Event Listener.
+\item Interactive Graphical User-Interface.
+\end{itemize}
+
+\subsection{Comparison to your proposal. State what was completed and what has not and why?}
+\label{sec-1-3}
+\subsubsection{Completed Features}
+\label{sec-1-3-1}
+\begin{itemize}
+\item HTTP Client: it is the module that is responsible for fetching the HTML document form the remote web-server. The browser works on HTTP GET Requests.
+\item Mouse Event Listener: the module listens was built to intercept users-inputs and trigger corresponding events.
+\item Interactive Graphical User-Interface: the user interface is very simple, with an input for web URl. Once when the user enters the URL and hits enter the HTML is rendered to the screen.
+\item HTML Parser: the parser parses the HTML from the HTTP response into a parse tree.
+\item HTML Renderer: the renderer parses the HTML into the final display. Although, only a small but the most popular HTML Tags are handled. Tags handled COMMENTS, HTML, HEAD, BODY, DIV, TITLE, P and H1 - H6.
+\end{itemize}
+
+Although, all the features mentioned above were implemented, certain features were developed to a point to demoninstrate its functionality. Mordern browsers have been around from 1990 and have built up very sophisticated features. The aim for the current project was to demoninstrate a skeleton implementation within a semester. 
+
+\subsubsection{In-Complete Features}
+\label{sec-1-3-2}
+\begin{itemize}
+\item There are 120 HTML tags defined by the W3c.
+\item Out of the above 10 Tags were depreciated.
+\item There are about 25 HTML Tags most commonly used.
+\item Out of 25 of the most popular TAGS used 10 were supported.
+\item The 10 Tags supported demoninstrated the key principles used in constructing a web browser.
+\end{itemize}
+
+\subsection{Brief Summary on Achievement overall and each individual}
+\label{sec-1-4}
+\subsubsection{Building a web browser from scratch requires large technical challenges. Some of the channenges were:}
+\label{sec-1-4-1}
+\begin{itemize}
+\item Limited to 10 development hours per week for the entire project.
+\item Lack of design documentation for existing projects and literature in the subject.
+\item Most of the programming involved was experimental.
+\item Compilers were studied to understand parsing and rendering.
+\end{itemize}
+\subsubsection{Individual Contributions}
+\label{sec-1-4-2}
+\begin{enumerate}
+\item Arvind
+\label{sec-1-4-2-1}
+\begin{itemize}
+\item Design and Analysis of the project.
+\item Build HTML Parser and Renderer.
+\end{itemize}
+\end{enumerate}
+
+\section{System Implementation Details}
+\label{sec-2}
+\subsection{What has been Implemented?}
+\label{sec-2-1}
+\begin{itemize}
+\item HTTP Client.
+\item HTML Parser.
+\item HTML Renderer.
+\item Mouse Event Listener.
+\item Interactive Graphical User-Interface.
+\end{itemize}
+
+\subsection{How was it Implemented?}
+\label{sec-2-2}
+\subsubsection{Techniques, languages, tools?}
+\label{sec-2-2-1}
+\begin{itemize}
+\item Java
+\item Gradle
+\item JSoup Library
+\end{itemize}
+
+\subsubsection{Algorithms}
+\label{sec-2-2-2}
+\begin{itemize}
+\item Custom Model-View-Controller design pattern.
+\item Singleton Degign Pattern for the renderer.
+\item Factory Design Pattern for the RendererObject.
+\item Tree based algorithms for the Parser and Renderer.
+\end{itemize}
+
+\subsubsection{Tools}
+\label{sec-2-2-3}
+\begin{itemize}
+\item Gradle was used for build management.
+\item Trello was used for project management.
+\item Git was used to version code.
+\end{itemize}
+
+
+\section{System Testing and Quality Assurance}
+\label{sec-3}
+\subsection{Test Plan}
+\label{sec-3-1}
+\subsubsection{Test Objective/ Requirement}
+\label{sec-3-1-1}
+\begin{itemize}
+\item Iterative and experimental development required that tests be performed directly on the implementation.
+\item Testing involved White, Black and Grey box testing whith minimal or no Unit tests.
+\end{itemize}
+\subsubsection{Assumptions}
+\label{sec-3-1-2}
+\begin{itemize}
+\item Performance and Security Testing Out-of-scope.
+\item No automated tests were considered as the project was experimental.
+\end{itemize}
+
+
+\section{System Documentation}
+\label{sec-4}
+\subsection{User Manual}
+\label{sec-4-1}
+% Emacs 25.1.1 (Org mode 8.2.10)
+\end{document}

@@ -14,22 +14,17 @@ public class Linky
     private static int _WindowXPosition = 100;
     private static int _WindowYPosition = 100;
 
+    Coordinator browser;
+    
     public static void main( String args[] )
-     {
+    {
 	 
 	 Linky.logger.info("BROWSER CONFIGURATION");
-	 /*
-	 logger.info("*********************");
-	 logger.info("App Title : " + _AppTitle);
-	 logger.info("Window Width : " + _WindowWidth);
-	 logger.info("Window Height : " + _WindowHeight);
-	 logger.info("Window X Position : " + _WindowXPosition);
-	 logger.info("Window Y Position : " + _WindowYPosition);
-	 */
-	 Coordinator browser = new Coordinator( _AppTitle,
-						_WindowXPosition,
-						_WindowYPosition,
-						_WindowWidth,
-						_WindowHeight);
-     }
- }
+
+	 browser = new Coordinator( _AppTitle,
+				    _WindowXPosition,
+				    _WindowYPosition,
+				    _WindowWidth,
+				    _WindowHeight);
+    }
+}

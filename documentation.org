@@ -1,16 +1,82 @@
-# HTML5 Tags 
-- 120 Tags
-- https://www.w3schools.com/tags/tag_applet.asp
+#+TITLE: SIT782 Assignemnt 3 (System Implementation)
+#+AUTHOR: Arvind Janakiram Cuthambakam - 217007335 \\ Author 1 \\ etc
 
-# Depricated HTML Tags
-- https://www.codehelp.co.uk/html/deprecated.html
-- 10 tags
+* Description of System Developed
 
-# HTML5 Tags by category
-- https://www.w3schools.com/tags/ref_byfunc.asp
+** What is the system Developed?
+   The system being developed is a Text-based web browser.
 
-- Basic HTML
-- 
+** Functionalities and the features of your system?
+   - Text-based web browser.
+   - HTTP Client.
+   - HTML Parser.
+   - HTML Renderer.
+   - Mouse Event Listener.
+   - Interactive Graphical User-Interface.
+
+** Comparison to your proposal. State what was completed and what has not and why?
+*** Completed Features
+    - HTTP Client: it is the module that is responsible for fetching the HTML document form the remote web-server. The browser works on HTTP GET Requests.
+    - Mouse Event Listener: the module listens was built to intercept users-inputs and trigger corresponding events.
+    - Interactive Graphical User-Interface: the user interface is very simple, with an input for web URl. Once when the user enters the URL and hits enter the HTML is rendered to the screen.
+    - HTML Parser: the parser parses the HTML from the HTTP response into a parse tree.
+    - HTML Renderer: the renderer parses the HTML into the final display. Although, only a small but the most popular HTML Tags are handled. Tags handled COMMENTS, HTML, HEAD, BODY, DIV, TITLE, P and H1 - H6. 
+
+Although, all the features mentioned above were implemented, certain features were developed to a point to demoninstrate its functionality. Mordern browsers have been around from 1990 and have built up very sophisticated features. The aim for the current project was to demoninstrate a skeleton implementation within a semester. 
+
+*** In-Complete Features
+    - There are 120 HTML tags defined by the W3c.
+    - Out of the above 10 Tags were depreciated.
+    - There are about 25 HTML Tags most commonly used.
+    - Out of 25 of the most popular TAGS used 10 were supported.
+    - The 10 Tags supported demoninstrated the key principles used in constructing a web browser.
+
+** Brief Summary on Achievement overall and each individual
+*** Building a web browser from scratch requires large technical challenges. Some of the channenges were:
+    - Limited to 10 development hours per week for the entire project.
+    - Lack of design documentation for existing projects and literature in the subject.
+    - Most of the programming involved was experimental.
+    - Compilers were studied to understand parsing and rendering.
+*** Individual Contributions 
+**** Arvind
+     - Design and Analysis of the project.
+     - Build HTML Parser and Renderer.
+
+* System Implementation Details
+** What has been Implemented?
+   - HTTP Client.
+   - HTML Parser.
+   - HTML Renderer.
+   - Mouse Event Listener.
+   - Interactive Graphical User-Interface.
+
+** How was it Implemented?
+*** Techniques, languages, tools?
+    - Java 
+    - Gradle
+    - JSoup Library
+
+*** Algorithms
+    - Custom Model-View-Controller design pattern.
+    - Singleton Degign Pattern for the renderer.
+    - Factory Design Pattern for the RendererObject.
+    - Tree based algorithms for the Parser and Renderer.
+
+*** Tools
+    - Gradle was used for build management.
+    - Trello was used for project management.
+    - Git was used to version code.
 
 
-All tags are parsed but only select is rendered.
+* System Testing and Quality Assurance
+** Test Plan
+*** Test Objective/ Requirement
+    - Iterative and experimental development required that tests be performed directly on the implementation. 
+    - Testing involved White, Black and Grey box testing whith minimal or no Unit tests.
+*** Assumptions
+    - Performance and Security Testing Out-of-scope.
+    - No automated tests were considered as the project was experimental.
+     
+
+* System Documentation
+** User Manual

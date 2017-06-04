@@ -24,17 +24,19 @@ class SoupParser
     FetchHTTP fetchData;
     String responseHTML;
     Document document;
-    // Renderer render01;
+    Renderer render01;
     RenderStyle ren;
+    RenderObject ro;
     
     public void parseHTML(String url) {
 	//	render01 = Renderer.getInstance();
 	try {
-	    url = "http://127.0.0.1:8080/testdata03.html";
+	    //url = "http://127.0.0.1:8080/testdata03.html";
 	    Linky.logger.info("*** Input URL ***");
 	    Linky.logger.info(url);
 	    fetchData = new FetchHTTP();
 	    responseHTML = fetchData.fetchHTML(url);
+	    render01 = Renderer.getInstance();
 	    Linky.logger.info(responseHTML);
 	} catch (Exception e) {}
 	document = Jsoup.parse(responseHTML);
@@ -43,6 +45,12 @@ class SoupParser
 	document.traverse(new NodeVisitor() {
 		
 		public void head(Node node, int depth) {
+
+		    ren = new RenderStyle(node);
+		    ro = new RenderObject().createObject(node, ren);
+
+		    render01.buildRenderTree(ro);
+		    
 		    /*
 		    System.out.println("" + ":" +
 				       depth + ":" +
@@ -54,10 +62,22 @@ class SoupParser
 				       node.siblingIndex() + ":" +
 				       node.getClass() + ":" + "");
 		    */
-		    ren = new RenderStyle(node);
+		    //  ren = new RenderStyle(node);
 
-		    RenderObject ro = new RenderObject().createObject(node,ren);
-		    System.out.println(ro.getClass().toString());
+		    //RenderObject ro = new RenderObject().createObject(node,ren);
+		    //System.out.println(ro.getClass().toString());
+		    //if(node.nodeName() != "#document") {
+			//System.out.println("current node : " + node.nodeName() + ":" + depth);
+			//if (node.nodeName() == "#text") { System.out.println("text : " +node); }
+			//System.out.println("parent node : " + node.parent().nodeName() + ":" + depth);
+			//System.out.println("end of iteration");
+		    //}
+
+		    //if(node instanceof Element) {
+		    //	Element i = (Element) node;
+		    //	System.out.println("*** children ** "  + i.children().toString());
+		    //}
+		    
 		    /*
 		    Linky.logger.info(node.getClass().toString() + " " +
 				      // node.hasText() + " " +
